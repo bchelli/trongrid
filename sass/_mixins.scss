@@ -1,0 +1,14 @@
+
+@mixin create-columns($class-slug, $nb-cols) {
+	@for $i from 1 through $nb-cols {
+		.#{$class-slug}-#{$i} {
+			width: 100% * $i/$nb-cols;
+		}
+	}
+}
+
+@mixin fixed-width($width) {
+	.container-fixed {
+		width: $width;
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "trongrid",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "compass compile -e production --force"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compass": "^0.1.1"
+  }
+}
