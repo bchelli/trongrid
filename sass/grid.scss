@@ -49,24 +49,31 @@
 }
 
 /* No gutter */
-.no-gutter .row {
-	margin-left:0;
-	margin-bottom:0;
-}
-.no-gutter [class^=col-],
-.no-gutter [class*=col-] {
-	border-left-width:0;
-	margin-bottom:0;
+.no-gutter {
+	&.container-fluid,
+	&.container-fixed {
+		margin-left:0;
+		margin-right:0;
+	}
+	.row {
+		margin-left:0;
+		margin-bottom:0;
+	}
+	[class^=col-],
+	[class*=col-] {
+		border-left-width:0;
+		margin-bottom:0;
+	}
 }
 
 /* Generate the grid */
 @each $name, $size, $width in $breakpoints {
 	@if $size == 0px {
-		@include fixed-width($width);
+		@include create-container($width, $gutter-width);
 		@include create-columns(col-#{$name}, $nb-cols);
 	} @else {
 		@media (min-width: $size) {
-			@include fixed-width($width);
+			@include create-container($width, $gutter-width);
 			@include create-columns(col-#{$name}, $nb-cols);
 		}
 	}

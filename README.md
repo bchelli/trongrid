@@ -11,7 +11,7 @@ And then one day, I have created yet a other grid system:
 
 
 ## Breakpoints
-|                       |Extra small devices Phones (≥0)|Small devices Tablets (≥768px)|Medium devices Desktops (≥992px)|Large devices Desktops (≥1200px)|
+|                       |Extra small devices Phones (≥0)|Small devices Tablets (≥790px)|Medium devices Desktops (≥992px)|Large devices Desktops (≥1200px)|
 |----------------------:|:-----------------------------:|:----------------------------:|:------------------------------:|:------------------------------:|
 | Breakpoint name       | xs                            | sm                           | md                             | lg                             |
 | Container fixed width | None (auto)                   | 750px                        | 970px                          | 1170px                         |
@@ -31,6 +31,9 @@ Column of the size ```size``` for the breakpoint ```breakpoint```.
 ### .container-fixed
 Create a fixed width container.
 
+### .container-fluid
+Create a fluid width container.
+
 ### .gutter-*[direction]*
 Create a margin of the Gutter width, the margin can be on any of the following ```direction```:
    - ```top```
@@ -46,14 +49,16 @@ Remove all the gutter from the columns
 ### Simple
 See full example in ```example/1-simple.html```
 ```html
-<div class="row">
-	<div class="col-xs-12">12</div>
-	<div class="col-xs-2">2</div>
-	<div class="col-xs-10">10</div>
-	<div class="col-xs-4">4</div>
-	<div class="col-xs-8">8</div>
-	<div class="col-xs-6">6</div>
-	<div class="col-xs-6">6</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">12</div>
+		<div class="col-xs-2">2</div>
+		<div class="col-xs-10">10</div>
+		<div class="col-xs-4">4</div>
+		<div class="col-xs-8">8</div>
+		<div class="col-xs-6">6</div>
+		<div class="col-xs-6">6</div>
+	</div>
 </div>
 ```
 
@@ -76,37 +81,41 @@ See full example in ```example/2-fixed-width.html```
 ### Responsive
 See full example in ```example/3-responsive.html```
 ```html
-<div class="row">
-	<div class="col-xs-12">12</div>
-	<div class="col-md-2  col-sm-4  col-xs-6">2</div>
-	<div class="col-md-10 col-sm-8  col-xs-6">10</div>
-	<div class="col-sm-4  col-xs-6">4</div>
-	<div class="col-sm-8  col-xs-6">8</div>
-	<div class="col-xs-6">6</div>
-	<div class="col-xs-6">6</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">12</div>
+		<div class="col-md-2  col-sm-4  col-xs-6">2</div>
+		<div class="col-md-10 col-sm-8  col-xs-6">10</div>
+		<div class="col-sm-4  col-xs-6">4</div>
+		<div class="col-sm-8  col-xs-6">8</div>
+		<div class="col-xs-6">6</div>
+		<div class="col-xs-6">6</div>
+	</div>
 </div>
 ```
 
 ### Nested
 See full example in ```example/4-nested.html```
 ```html
-<div class="row">
-	<div class="col-xs-12">12</div>
-	<div class="col-xs-2">2</div>
-	<div class="col-xs-10">10</div>
-	<div class="col-xs-4">
-		4
-		<div class="row">
-			<div class="col-xs-6">6</div>
-			<div class="col-xs-6">6</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">12</div>
+		<div class="col-xs-2">2</div>
+		<div class="col-xs-10">10</div>
+		<div class="col-xs-4">
+			4
+			<div class="row">
+				<div class="col-xs-6">6</div>
+				<div class="col-xs-6">6</div>
+			</div>
 		</div>
-	</div>
-	<div class="col-xs-8">
-		8
-		<div class="row">
-			<div class="col-xs-4">4</div>
-			<div class="col-xs-4">4</div>
-			<div class="col-xs-4">4</div>
+		<div class="col-xs-8">
+			8
+			<div class="row">
+				<div class="col-xs-4">4</div>
+				<div class="col-xs-4">4</div>
+				<div class="col-xs-4">4</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -115,7 +124,7 @@ See full example in ```example/4-nested.html```
 ### No gutter
 See full example in ```example/5-no-gutter.html```
 ```html
-<div class="no-gutter">
+<div class="container-fluid no-gutter">
 	<div class="row">
 		<div class="col-xs-12">12</div>
 		<div class="col-xs-2">2</div>

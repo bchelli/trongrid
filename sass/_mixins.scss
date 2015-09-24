@@ -7,8 +7,21 @@
 	}
 }
 
-@mixin fixed-width($width) {
+@mixin create-container-margin($container-gutter) {
+	margin-left: $container-gutter;
+	margin-right: $container-gutter;
+}
+
+@mixin create-container($width, $container-gutter) {
+	.container-fluid {
+		@include create-container-margin($container-gutter);
+	}
 	.container-fixed {
 		width: $width;
+		@if $width == auto {
+			@include create-container-margin($container-gutter);
+		} @else {
+			@include create-container-margin(auto);
+		}
 	}
 }
